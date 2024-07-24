@@ -1,7 +1,7 @@
 import reduceReducers from "reduce-reducers"
 import counterReducer from "./counter-reducer"
-import counterStateCluster from "./data-clusters/counter-state-cluster"
-import userMetaDataCluster from "./data-clusters/user-metadata-state-cluster"
+import counterStateCluster from "./state-clusters/counter-state-cluster"
+import userMetaDataCluster from "./state-clusters/user-metadata-state-cluster"
 import userMetaDataReducer from "./user-metadata-reducer"
 
 // ! 'rootReducer' combines reducer functions into a single reducer, and provides initial states
