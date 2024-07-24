@@ -1,6 +1,6 @@
 # React State Management System
 
-### Project overview
+## Project overview
 This project demonstrates a certain way of structuring the *state management system* in a React application using context and reducers.
 
 The primary functionalities include updating state and managing local storage.
@@ -25,9 +25,9 @@ The **Navbar** component shows how to handle state updates and local storage dir
 The **rootReducer** combines multiple reducer functions into a single reducer and provides initial states.
 
 States and their initial values are aggregated into a single object and divided into clusters. Clusters are objects nested within the main object which group states into logical units. There are two clusters in this project:
-* [Coutner cluster](https://github.com/RabbitHole26/react-state-management-system/blob/main/src/store/reducers/data-clusters/counter-state-cluster.js)
+* [Coutner cluster](https://github.com/RabbitHole26/react-state-management-system/blob/main/src/store/reducers/state-clusters/counter-state-cluster.js)
 * [User metadata cluster
-](https://github.com/RabbitHole26/react-state-management-system/blob/main/src/store/reducers/data-clusters/user-metadata-state-cluster.js)
+](https://github.com/RabbitHole26/react-state-management-system/blob/main/src/store/reducers/state-clusters/user-metadata-state-cluster.js)
 
 #### [Counter Reducer](https://github.com/RabbitHole26/react-state-management-system/blob/main/src/store/reducers/counter-reducer.js)
 
