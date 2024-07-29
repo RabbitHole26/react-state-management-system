@@ -1,16 +1,12 @@
 import setInitialState from "../utils/set-initial-state";
 
-// ! Clusters are objects aggregating related states and providing initial values
-// * Clusters are spread into nested object inside 'initialState' object in 'rootReducer.js'
-// * Cluster logic is abstracted into separate file for scalability purposes
+// state clusters aggregate related state values and provide initial values
+// clusters are merged into a nested object inside the 'initialState' object in 'rootReducer.js'
+// clustering logic is abstracted into a separate file to improve scalability and maintainability
 
 const userMetaDataCluster = {
   isDarkMode: setInitialState('isDarkMode', false),
-  // another state,
-  // another state,
-  // another state,
-  // another state,
-  // another state
+  // other state properties related to this cluster can be added here
 }
 
 export default userMetaDataCluster

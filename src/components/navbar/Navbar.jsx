@@ -1,23 +1,22 @@
-import { useEffect } from "react"
 import { useReducerContext } from "../../store/context/ReducerContext"
 
-// ! This is an example of the component in which the state update logic and local storage management is handled locally
+// this component handles theme toggling and updates local storage directly
+// the state update logic for toggling the theme is handled by dispatching an action
 
 const Navbar = () => {
+  // access global state and dispatch function via context
   const {state, dispatch} = useReducerContext()
+  // extract the current theme state
   const {isDarkMode} = state.userMetaData
+
+  // function to toggle the theme
   const changeTheme = () => {
     dispatch({
       type: 'TOGGLE_THEME',
-      // state update logic handled directly in the component
+      // toggle the theme based on current state
       payload: !isDarkMode
     })
   }
-
-  // local storage handled directly in the component
-  useEffect(() => {
-    localStorage.setItem('isDarkMode', isDarkMode)
-  }, [isDarkMode])
 
   return (
     <nav className="bg-yellow-800 text-white p-5">

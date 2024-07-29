@@ -2,7 +2,9 @@ import { useReducerContext } from '../../store/context/ReducerContext'
 import Navbar from '../navbar/Navbar'
 
 const Layout = ({children}) => {
+  // access global state function via context
   const {state} = useReducerContext()
+  // extract the current theme state
   const {isDarkMode} = state.userMetaData
 
   return (

@@ -1,17 +1,26 @@
-// ! This is an example of a reducer function which receives a state value from the Component handling state update directly.
+// reducer function for managing user metadata state updates
+// the function receives a draft state (mutable copy) and action object
+// the action object includes a payload that carries the new value to update the state.
 
-const userMetaDataReducer = (state, action) => {
+const userMetaDataReducer = (draft, action) => {
   switch (action.type) {
     case 'TOGGLE_THEME':
-      return {
-        ...state,
-        userMetaData : {
-          ...state.userMetaData,
-          isDarkMode: action.payload
-        }
-      }
+      // example with useReducer (uncomment if using useReducer)
+      // return {
+      //   ...state,
+      //   userMetaData : {
+      //     ...state.userMetaData,
+      //     isDarkMode: action.payload
+      //   }
+      // }
+
+      // example with useImmerReducer
+      // directly mutate the draft state using Immer
+      draft.userMetaData.isDarkMode = action.payload
+      return draft
     default:
-      return state
+      // return the draft state unchanged for unrecognized actions
+      return draft
   }
 }
 

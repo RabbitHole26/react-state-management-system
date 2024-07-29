@@ -1,18 +1,22 @@
 import { useReducerContext } from "../../store/context/ReducerContext"
 
-// ! This is an example of the component in which the state update logic and local storage management is handled in the reducer (counter-reducer.js)
+// this component demonstrates how to use the shared state and dispatch function
+// the state update is handled by 'counter-reducer.js'
+// actions are dispatched to update the counter value in the global state
 
 const Counter = () => {
   const {state, dispatch} = useReducerContext()
   const {count} = state.counter
 
+  // function to handle incrementing the count
   const incrementCount = () => {
-    // state update logic and local storage management is handled by 'counter-reducer.js'
+    // dispatch an action to increment the count; state update logic is managed by 'counter-reducer.js'
     dispatch({type: 'INCREMENT_COUNTER'})
   }
 
+  // function to handle decrementing the count
   const decrementCount = () => {
-    // state update logic and local storage management is handled by 'counter-reducer.js'
+    // dispatch an action to decrement the count; state update logic is managed by 'counter-reducer.js'
     dispatch({type: 'DECREMENT_COUNTER'})
   }
 
@@ -20,7 +24,7 @@ const Counter = () => {
     <div className="flex justify-center">
       <div className="flex flex-col items-center border rounded-md p-5 m-5 max-w-fit bg-stone-700 text-white">
       
-        {/* COUNTER */}
+        {/* DISPLAY COUNT */}
         <div className="p-2">
           Count: {count}
         </div>
